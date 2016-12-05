@@ -1,0 +1,18 @@
+<!--预览视图-->
+<div xmlns:th="http://www.thymeleaf.org" xmlns:res="http://resource.jiangcai.me"
+     class="information-list information-list-red">
+    <div>
+        <div class="information-list-left-header">
+            <h2 th:text="${parentCategory!=null?parentCategory.name:'资讯动态'}">资讯动态</h2>
+        </div>
+        <ul class="list-unstyled information-list-left-body">
+            <li th:each="dataModel:${dataModels}" th:class="${contentCategory!=null and
+                                                    dataModel.category.serial==contentCategory.serial}?'active' :''">
+                <a th:href="@{/${dataModel.contentURI}}" href="javascript:void(0);">
+                    <span th:text="${dataModel.category.name}">数据源1</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--/预览视图-->
