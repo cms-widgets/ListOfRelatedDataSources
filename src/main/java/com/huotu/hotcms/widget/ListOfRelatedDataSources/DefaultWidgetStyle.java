@@ -37,11 +37,17 @@ public class DefaultWidgetStyle implements WidgetStyle{
     }
 
     @Override
+    public String description() {
+        return "该样式为竖排列表形式显示，仅可以在内容页进行展示，配合众多内容列表控件和内容使用";
+    }
+
+    @Override
     public String description(Locale locale) {
         if (locale.equals(Locale.CHINA)) {
-            return "基于bootstrap样式的风格";
+            return description();
         }
-        return "Based on the bootstrap style by ListOfRelatedDataSources";
+        return "The style for the vertical list display,Can only be displayed on the content page, " +
+                "with the contents of the list control and the use of content";
     }
 
     @Override
